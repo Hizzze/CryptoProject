@@ -11,7 +11,8 @@ export const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetchCryptoData();
+    const interval = setInterval(fetchCryptoData, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
