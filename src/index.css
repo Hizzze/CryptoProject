@@ -137,6 +137,42 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.filter-group option {
+  background-color: #121212; /* Темный фон для блока */
+  color: #ffffff; /* Белый текст */
+  border: 1px solid #444; /* Светлая граница */
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* Убираем стандартную стрелочку */
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aaaaaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 35px; /* Отступ для новой стрелочки */
+  transition: border-color 0.2s;
+}
+
+/* Стиль при наведении и фокусе */
+.filter-group select:hover {
+  border-color: #00ff88; /* Твой фирменный зеленый */
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #00ff88;
+  box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
+/* Стилизуем сами опции (работает не во всех браузерах, но color-scheme поможет) */
+.filter-group option {
+  background-color: #121212; /* На случай, если color-scheme не сработает */
+  color: #ffffff;
+  padding: 8px;
+}
+
 .filter-group select:hover {
   background: rgba(255, 255, 255, 0.08);
 }
